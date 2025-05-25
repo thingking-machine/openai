@@ -264,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             const newCmjMessage = {
                                 role: llmResponseData.role,
                                 name: machineConfig.name,
-                                content: llmResponseData.content.text
+                                content: llmResponseData.content
                             };
 
                             // cmjMessages (from the outer scope of the Alt+Shift listener) is updated
