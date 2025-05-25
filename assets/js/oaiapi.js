@@ -62,7 +62,6 @@ self.onmessage = async function(event) {
             max_completion_tokens: 4096,
             temperature: 1,
             top_p: 1,
-            top_k: 50,
             response_format: {"type":"text"},
             stream: false
         };
