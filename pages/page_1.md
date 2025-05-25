@@ -1,14 +1,5 @@
 ---
 layout: page
-title: MathJax formulas
+title: Openai
 ---
-{% include lib/mathjax.html %}
-
-$$
-  \Huge
-  \begin{align*}
-  d &\mid b \\
-  \hline
-  q &\mid p
-  \end{align*}
-$$
+This.
