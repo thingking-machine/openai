@@ -102,7 +102,7 @@ self.onmessage = async function(event) {
         const apiData = await apiCallResponse.json();
         console.log('Worker: API call successful, response:', apiData);
 
-        const msgResponse = apiData.completion_message  // meta's response text in its content.text of it
+        const msgResponse = apiData.choices[0].message.content // OpenAI's API response text is in choices[0].message.content
 
         // Send the successful result back to the main thread
         self.postMessage({ type: 'success', data: msgResponse });
