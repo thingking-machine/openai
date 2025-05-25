@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         try {
                             const llmResponseData = e.data.data;
-                            if (!llmResponseData || !llmResponseData.content || llmResponseData.content.text.length === 0) {
+                            if (!llmResponseData || !llmResponseData.content || llmResponseData.content.length === 0) {
                                 console.error('LLM response is missing a message content.');
                                 alert('Received an empty or invalid response from the LLM.');
                                 return;
