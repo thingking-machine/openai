@@ -71,7 +71,7 @@ self.onmessage = async function(event) {
             seed: 246,
             stream: false
         };
-
+        console.log('Worker: Default API parameters:', defaultApiParameters)
         // Merge default parameters, then incoming user parameters (which might override temp, max_tokens, etc.),
         const finalApiPayload = {
             ...defaultApiParameters,
@@ -90,7 +90,7 @@ self.onmessage = async function(event) {
             body: JSON.stringify(finalApiPayload)
         };
 
-        console.log('Worker: Making API call Meta API with payload:', finalApiPayload);
+        console.log('Worker: Making API call to OpenAI API with payload:', finalApiPayload);
         const apiCallResponse = await fetch(machineConfig.apiUrl, apiOptions);
 
         if (!apiCallResponse.ok) {
