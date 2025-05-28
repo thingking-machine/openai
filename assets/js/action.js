@@ -1,5 +1,37 @@
 
 document.addEventListener('DOMContentLoaded', () => {
+    const llmSettings = {};
+    const queryParams = new URLSearchParams(window.location.search);
+
+    // Iterate over all query parameters found in the URL
+    for (const [key, value] of queryParams.entries()) {
+        // Basic type conversion for known numeric fields
+        if (key === 'temperature') {
+          const numValue = parseFloat(value);
+          llmSettings[key] = isNaN(numValue) ? value : numValue;
+        } else if (key === 'max_tokens') {
+            const numValue = parseInt(value, 10);
+            llmSettings[key] = isNaN(numValue) ? value : numValue;
+        } else if (key === 'max_completion_tokens') {
+            const numValue = parseInt(value, 10);
+            llmSettings[key] = isNaN(numValue) ? value : numValue;
+        } else if (key ==='frequency_penalty') {
+          const numValue = parseFloat(value);
+          llmSettings[key] = isNaN(numValue) ? value : numValue;
+        } else if (key ==='presence_penalty') {
+            const numValue = parseFloat(value);
+            llmSettings[key] = isNaN(numValue) ? value : numValue;
+        } else if (key === 'top_p') {
+          const numValue = parseFloat(value);
+          llmSettings[key] = isNaN(numValue) ? value : numValue;
+        } else {
+          llmSettings[key] = value;
+        }
+      }
+    // Make the parameters globally available for other scripts
+    window.llmSettings = llmSettings;
+    console.log('LLM Settings:', window.llmSettings)
+
     // Check whether the page has the container.
     const contentContainer = document.querySelector('.container-md.markdown-body');
     if (!contentContainer) {
@@ -237,6 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const userQueryParameters = {
                     config: window.machineConfig,
+                    settings: window.llmSettings,
                     messages: cmjMessages
                 };
 
