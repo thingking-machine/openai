@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (key === 'max_tokens') {
             const numValue = parseInt(value, 10);
             llmSettings[key] = isNaN(numValue) ? value : numValue;
-        } else if (key === 'max_completion_tokens') {
-            const numValue = parseInt(value, 10);
-            llmSettings[key] = isNaN(numValue) ? value : numValue;
+        // } else if (key === 'max_completion_tokens') {
+        //     const numValue = parseInt(value, 10);
+        //     llmSettings[key] = isNaN(numValue) ? value : numValue;
         } else if (key ==='frequency_penalty') {
           const numValue = parseFloat(value);
           llmSettings[key] = isNaN(numValue) ? value : numValue;
