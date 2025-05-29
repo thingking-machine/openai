@@ -1,6 +1,8 @@
 // worker.js
 let machineConfig = null;
 let messages = null;
+let llmSettings = null;
+
 
 self.onmessage = async function(event) {
     // Parameters for the LLM API call from the main thread

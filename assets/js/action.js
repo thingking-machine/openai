@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const llmSettings = {};
     const queryParams = new URLSearchParams(window.location.search);
