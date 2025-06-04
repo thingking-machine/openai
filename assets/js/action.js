@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-    // 13. Listen for storage changes to multilogue (e.g., from extension)
+    // 12. Listen for storage changes to multilogue (e.g., from extension)
     window.addEventListener('storage', function(event) {
         if (event.key === 'multilogue') {
             // console.log('Page Script: localStorage.platoText changed, calling updateDisplayState.');
@@ -368,7 +368,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-    // 14. Update display when tab becomes visible again
+    // 13. Update display when tab becomes visible again
     document.addEventListener('visibilitychange', () => {
         if (document.visibilityState === 'visible') {
             // console.log('Page is now visible, ensuring display is up to date.');
