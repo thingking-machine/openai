@@ -347,7 +347,7 @@ class MachineApp {
         throw new Error('LLM response is missing message content.');
       }
       
-      const desoupedText = llmSoupToText(llmResponseData.content.text);
+      const desoupedText = llmSoupToText(llmResponseData.content);
       const newCmjMessage = {
         role: llmResponseData.role,
         name: this.settings.machine.name,
