@@ -7,17 +7,17 @@ include:
   - README.md
   - LICENSE.md
 url: https://thingking-machine.github.io
-baseurl: /frame
+baseurl: /openai
 
 title: Thingking Machine
 description: A machine is a thing. Things can not think. ...but some of them can thingk!
 
 lm:
-  model: gpt-5.4-mini
+  model: gpt-5.4
   max_tokens: 100000
   reasoning_effort: high
   temperature: 1.0
-  top_p: 0.7
+  top_p: 0.9
 
 app:
   worker_name: oaiapi.js
